@@ -3,9 +3,21 @@ var socket = io()
 var username = document.getElementById("username");
 username.value = window.sessionStorage.getItem('username');
 
-var message = document.getElementById("message-text");
+var messages = document.getElementById("messages");
 
+var message = document.getElementById("message-text");
 var button = document.getElementById("send-btn");
+
+message.addEventListener("keydown", e => {
+    if (e.keyCode === 13 || e.keyCode === 13) {
+        if (e.ctrlKey){
+            message.value += '\n';
+            return;
+        }
+        e.preventDefault();
+        button.click();
+    }
+});
 
 button.addEventListener('click', () => {
     if (username.value == '')
@@ -19,7 +31,7 @@ button.addEventListener('click', () => {
     if (message.value != ''){
         console.log('Sending a message...');
         socket.emit('message', {
-            message: message.value,
+            body: message.value,
             username: username.value
         });
         message.value = '';
@@ -28,5 +40,17 @@ button.addEventListener('click', () => {
 
 socket.on('message', (message) => {
     console.log('Message received from server!');
-    console.log(message);
+
+    let messageDiv = document.createElement('div');
+    if (message.username == username.value) {
+        messageDiv.className = 'my-message';
+    }
+    else {
+        messageDiv.className = 'message';
+        messageDiv.innerHTML = `<p><b>${message.username}</b></p>`;
+    }
+
+    messageDiv.innerHTML += `<p>${message.body}</p>`;
+
+    messages.appendChild(messageDiv);
 });

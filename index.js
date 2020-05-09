@@ -11,7 +11,7 @@ app.use(express.static('static'));
 
 io.on('connection', socket =>{
     console.log('User connected!');
-    
+
     socket.on('message', (message) => {
         io.sockets.emit('message', message);
     })
