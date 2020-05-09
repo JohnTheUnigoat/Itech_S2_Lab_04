@@ -1,0 +1,10 @@
+:root {
+    background-color: #444;
+    color: #eee;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
