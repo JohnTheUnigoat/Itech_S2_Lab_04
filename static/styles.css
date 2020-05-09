@@ -4,7 +4,137 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #333;
+    border-radius: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4e4e4e;
+    border-radius: 0.5em;
+}
+
+*:focus {
+    outline: none;
+}
+
+body{
+    margin: 0;
+}
+
 main {
+    position: relative;
     width: 80%;
+    height: 100vh;
     margin: auto;
+
+    /* border: 1px white dotted; */
+}
+
+#chat {
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: table;
+    border-spacing: 1em;
+}
+
+#name-row {
+    display: table-row;
+    height: fit-content;
+}
+
+.name-cell {
+    display: inline-block;
+    margin: 0.5em;
+}
+
+.name-cell > p {
+    margin: 0.5em 0;
+}
+
+#name {
+    background-color: #333;
+    color: #eee;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+    font-size: large;
+}
+
+#messages-row {
+    display: table-row;
+    padding-bottom: 1em;
+}
+
+#messages-cell {
+    display: table-cell;
+
+    background-color: #333;
+    border-radius: 0.5em;
+}
+
+#messages {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.message > p, .my-message > p {
+    margin: 0.5em 0;
+}
+
+.message {
+    width: fit-content;
+    background-color: #4e4e4e;
+    border-radius: 0.5em;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+}
+
+.my-message {
+    width: fit-content;
+    background-color: #2b72ed;
+    border-radius: 0.5em;
+    margin: 0.5em 0.5em 0.5em auto;
+    padding: 0.5em 1em;
+}
+
+#input-row {
+    /* margin-top: 1em; */
+    display: table-row;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+#message-text {
+    width: 100%;
+    resize: none;
+    padding: 0.5em;
+    box-sizing: border-box;
+    font-size: larger;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #333;
+    color: #eee;
+}
+
+#send-btn {
+    width: 100%;
+    border: 1px transparent solid;
+    font-size: larger;
+    padding: 0.5em;
+    border-radius: 0.5rem;
+    transition-property: border;
+    transition-duration: 0.2s;
+    background-color: #2b72ed;
+    color: #eee;
+}
+
+#send-btn:hover {
+    border: 1px #eee solid;
 }
