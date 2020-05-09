@@ -25,3 +25,8 @@ button.addEventListener('click', () => {
         message.value = '';
     }
 });
+
+socket.on('message', (message) => {
+    console.log('Message received from server!');
+    console.log(message);
+});
