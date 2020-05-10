@@ -9,7 +9,7 @@ var message = document.getElementById("message-text");
 var button = document.getElementById("send-btn");
 
 message.addEventListener("keydown", e => {
-    if (e.keyCode === 13 || e.keyCode === 13) {
+    if (e.keyCode === 10 || e.keyCode === 13) {
         if (e.ctrlKey){
             message.value += '\n';
             return;
