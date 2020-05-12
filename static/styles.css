@@ -81,26 +81,37 @@ main {
 #messages {
     width: 100%;
     height: 100%;
+    padding: 0 0.5em;
+    box-sizing: border-box;
     overflow-y: auto;
 }
 
 .message > p, .my-message > p {
-    margin: 0.5em 0;
+    margin: 0;
+}
+
+.message b {
+    display: block;
+    margin-bottom: 5px;
 }
 
 .message {
     width: fit-content;
+    width: -moz-fit-content;
     background-color: #4e4e4e;
     border-radius: 0.5em;
-    margin: 0.5em;
+    max-width: 100%;
+    margin-bottom: 0.5em;
     padding: 0.5em 1em;
 }
 
 .my-message {
     width: fit-content;
+    width: -moz-fit-content;
     background-color: #2b72ed;
     border-radius: 0.5em;
-    margin: 0.5em 0.5em 0.5em auto;
+    margin: 0.5em 0 0.5em auto;
+    max-width: 100%;
     padding: 0.5em 1em;
 }
 

@@ -47,7 +47,7 @@ socket.on('message', (message) => {
     }
     else {
         messageDiv.className = 'message';
-        messageDiv.innerHTML = `<p><b>${message.username}</b></p>`;
+        messageDiv.innerHTML = `<b>${message.username}</b>`;
     }
 
     messageDiv.innerHTML += `<p>${message.body}</p>`;
