@@ -43,10 +43,10 @@ socket.on('message', (message) => {
 
     let messageDiv = document.createElement('div');
     if (message.username == username.value) {
-        messageDiv.className = 'my-message';
+        messageDiv.className = 'msg msg-my';
     }
     else {
-        messageDiv.className = 'message';
+        messageDiv.className = 'msg msg-other';
         messageDiv.innerHTML = `<b>${message.username}</b>`;
     }
 
