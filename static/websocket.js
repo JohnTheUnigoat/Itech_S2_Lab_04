@@ -53,4 +53,6 @@ socket.on('message', (message) => {
     messageDiv.innerHTML += `<p>${message.body}</p>`;
 
     messages.appendChild(messageDiv);
+
+    messages.scrollTop = messages.scrollHeight;
 });
